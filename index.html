@@ -647,18 +647,18 @@ function pedir(produto){
 </script>
 <script>
 function showSec(id, btn) {
-  // 1. Esconde TUDO que for seção (cestas, gesso, essencias)
+  // 1. Esconde todas as seções
   document.querySelectorAll('.sec').forEach(s => {
     s.style.display = 'none';
   });
 
-  // 2. Mostra a seção que você clicou (pelo ID)
+  // 2. Mostra a seção que clicaste
   const alvo = document.getElementById(id);
   if (alvo) {
     alvo.style.display = 'block';
   }
 
-  // 3. Muda o botão ativo
+  // 3. Atualiza a cor dos botões
   document.querySelectorAll('.cnbtn').forEach(b => b.classList.remove('active'));
   if (btn) btn.classList.add('active');
 
@@ -666,17 +666,21 @@ function showSec(id, btn) {
   document.getElementById('catalogo').scrollIntoView({behavior:'smooth', block:'start'});
 }
 
-// Funções das Cestas que você já tinha (ajustadas)
+// Se tiveres botões dentro das cestas para "Ver todas", usa isto:
 function mostrarTodasCestas() {
-  showSec('cestas', document.querySelector('.cnbtn.active'));
-  const categorias = document.querySelector(".opcoes-cestas");
-  if (categorias) categorias.style.display = "none";
+  const btnCestas = document.querySelector('.cnbtn'); // Pega o primeiro botão (Cestas)
+  showSec('cestas', btnCestas);
+  
+  const opcoes = document.querySelector(".opcoes-cestas");
+  if (opcoes) opcoes.style.display = "none";
 }
 
 function voltarCategorias() {
-  const categorias = document.querySelector(".opcoes-cestas");
-  if (categorias) categorias.style.display = "block";
-  document.getElementById("cestas").style.display = "none";
+  const opcoes = document.querySelector(".opcoes-cestas");
+  if (opcoes) opcoes.style.display = "block";
+  
+  const divCestas = document.getElementById("cestas");
+  if (divCestas) divCestas.style.display = "none";
 }
 </script>
 </body>
