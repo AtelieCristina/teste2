@@ -474,16 +474,13 @@ footer{background:var(--dark);padding:60px 72px 36px;}
         <span class="opcao-btn">Ver cestas →</span>
       </div>
       
-      <!-- Opção 3: Combinações prontas -->
-      <div class="opcao-card" onclick="window.open('https://wa.me/5567991475699?text=Olá!%20Quero%20ver%20as%20combinações%20prontas%20de%20cestas%20😊','_blank')">
-        <div class="opcao-icon">🧺</div>
-        <div class="opcao-title">Combinações prontas</div>
-        <div class="opcao-desc">Cestas já montadas com produtos selecionados, ideais para presentear com praticidade</div>
-        <span class="opcao-btn">Consultar →</span>
-      </div>
-      
-    </div>
-  </div>
+      <!-- Opção 3: Portfólio -->
+      <div class="opcao-card" onclick="document.getElementById('galeria').scrollIntoView({behavior: 'smooth'})">
+  <div class="opcao-icon">📸</div>
+  <div class="opcao-title">Cestas que encantam</div>
+  <div class="opcao-desc">Veja fotos de montagens reais e combinações que já criamos para nossos clientes.</div>
+  <span class="opcao-btn">Ver Inspirações ↓</span>
+</div>
   
   <!-- TODAS AS CESTAS (inicialmente oculto) -->
   <div id="secao-cestas" style="display:none;">
